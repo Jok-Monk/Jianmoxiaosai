@@ -45,6 +45,7 @@ int main()
     double sum_year_yiwujiaoyu = 0, sum_year_gaozhong = 0, sum_year_daxue = 0;
     double k_yiwujiaoyu, k_gaozhong, k_daxue, b_yiwujiaoyu, b_gaozhong, b_daxue;
     double r_yiwujiaoyu, r_gaozhong, r_daxue;
+    double jinfei[8] = {0};
     int i;
     for (i = 0; i < 8; i++)
     {
@@ -76,10 +77,21 @@ int main()
     r_gaozhong = (sum_year_gaozhong - 8 * ave_year * ave_gaozhong_jinfei) / sqrt((sum_year2 - 8 * ave_year * ave_year) * (sum_gaozhong2 - 8 * ave_gaozhong_jinfei * ave_gaozhong_jinfei));
     r_daxue = (sum_year_daxue - 8 * ave_year * ave_daxue_jinfei) / sqrt((sum_year2 - 8 * ave_year * ave_year) * (sum_daxue2 - 8 * ave_daxue_jinfei * ave_daxue_jinfei));
 
+    for (int i = 0; i < 8; i++)
+    {
+        jinfei[i] = yiwujiaoyu_jinfei[i] + gaozhong_jinfei[i] + daxue_jinfei[i];
+    }
+    
     for ( i = 1; i <= 3; i++)
     {
         printf("预测%d年：义务教育：%lf, 高中：%lf, 大学：%lf\n", 2023 + i, k_yiwujiaoyu * (2023 + i) + b_yiwujiaoyu, k_gaozhong * (2023 + i) + b_gaozhong, k_daxue * (2023 + i) + b_daxue);
     }
     printf("相关系数：义务教育：%lf, 高中：%lf, 大学：%lf\n", r_yiwujiaoyu, r_gaozhong, r_daxue);
+for (int i = 0; i < 8; i++)
+{
+    printf("%lf\n",jinfei[i]);
+}
+
+    
     return 0;
 }
