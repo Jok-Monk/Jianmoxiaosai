@@ -1,3 +1,4 @@
+/*计算Q1t=a1*F1t+b1的相关系数a1,b1*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -22,26 +23,12 @@ void linear(int n, double *x, double *y, double *k, double *b, double *r)
 }
 int main()
 {
-    double yiwujiaoyu_jinfei[8] = {267.4522,
-                                   279.8679,
-                                   271.8626,
-                                   269.5978,
-                                   289.6829,
-                                   286.3879,
-                                   270.2604,
-                                   282.4349};
-    double yiwujiaoyu_shengshibi[8] = {15.2484,
-                                       15.1697,
-                                       15.2071,
-                                       15.1852,
-                                       15.0664,
-                                       14.8433,
-                                       14.7879,
-                                       14.8826};
+    double yiwujiaoyu_jinfei[8] = {267.4522,279.8679,271.8626,269.5978,289.6829,286.3879,270.2604,282.4349};
+    double yiwujiaoyu_shengshibi[8] = {15.2484,15.1697,15.2071,15.1852,15.0664,14.8433,14.7879,14.8826};
 
     // 计算最小二乘
     double k_yiwujiaoyu, b_yiwujiaoyu, r_yiwujiaoyu;
     linear(8, yiwujiaoyu_jinfei, yiwujiaoyu_shengshibi, &k_yiwujiaoyu, &b_yiwujiaoyu, &r_yiwujiaoyu);
-    printf("yiwujiaoyu_jinfei: k = %f, b = %f, r = %f\n", k_yiwujiaoyu, b_yiwujiaoyu, r_yiwujiaoyu);
+    printf("yiwujiaoyu_jinfei~shengshibi: k = %f, b = %f, r = %f\n", k_yiwujiaoyu, b_yiwujiaoyu, r_yiwujiaoyu);
     return 0;
 }

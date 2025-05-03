@@ -1,3 +1,4 @@
+/*计算Q2t=a2*F2t+b2的相关系数a2,b2*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -21,26 +22,12 @@ void linear(int n, double *x, double *y, double *k, double *b, double *r)
 }
 int main()
 {
-    double gaozhong_jinfei[8] = {91.5254,
-                                 97.4366,
-                                 92.5165,
-                                 94.8163,
-                                 103.3552,
-                                 104.5238,
-                                 103.4368,
-                                 103.7186};
-    double shengxuelv[8] = {0.595614502,
-                            0.638704982,
-                            0.644444444,
-                            0.829654152,
-                            0.686863673,
-                            0.849723255,
-                            0.775398727,
-                            0.749869334};
+    double gaozhong_jinfei[8] = {91.5254,97.4366,92.5165,94.8163,103.3552,104.5238,103.4368,103.7186};
+    double shengxuelv[8] = {0.595614502,0.638704982,0.644444444,0.829654152,0.686863673,0.849723255,0.775398727,0.749869334};
 
     // 计算最小二乘
     double a2, b2, r;
     linear(8, gaozhong_jinfei, shengxuelv, &a2, &b2, &r);
-    printf("gao zhong jin fei: k = %f, b = %f, r = %f\n", a2, b2, r);
+    printf("gaozhong_jinfei~shengxuelv: k = %f, b = %f, r = %f\n", a2, b2, r);
     return 0;
 }
